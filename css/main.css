@@ -3714,12 +3714,6 @@ form textarea:required:valid {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  height: 520px;
-}
-@media only screen and (min-width: 1400px) {
-  .cards__item {
-    height: 620px;
-  }
 }
 
 .cards__card {
@@ -3732,11 +3726,11 @@ form textarea:required:valid {
 }
 
 .cards__descr {
-  padding: 3rem;
+  padding: 2.6rem;
 }
 @media only screen and (min-width: 1400px) {
   .cards__descr {
-    padding: 5rem;
+    padding: 3.4rem;
   }
 }
 
@@ -3755,7 +3749,7 @@ form textarea:required:valid {
 }
 
 .cards__text {
-  margin-top: 2.3rem;
+  margin-top: 1.6rem;
 }
 
 .cards__image {
