@@ -431,3 +431,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+// --------------------------------------------- //
+// Resume "Ver más" Toggle Start
+// --------------------------------------------- //
+window.addEventListener('DOMContentLoaded', () => {
+  const CLAMP_HEIGHT = 96;
+
+  document.querySelectorAll('.resume-lines__descr').forEach((descr) => {
+    if (descr.scrollHeight <= CLAMP_HEIGHT + 24) return;
+
+    descr.classList.add('is-clamped');
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'resume-lines__more';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<span>Ver más</span><i class="ph-bold ph-caret-down"></i>';
+
+    btn.addEventListener('click', () => {
+      const expanded = descr.classList.toggle('is-expanded');
+      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      btn.querySelector('span').textContent = expanded ? 'Ver menos' : 'Ver más';
+    });
+
+    descr.insertAdjacentElement('afterend', btn);
+  });
+});
+// --------------------------------------------- //
+// Resume "Ver más" Toggle End
+// --------------------------------------------- //

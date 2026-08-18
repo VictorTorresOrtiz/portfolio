@@ -3836,9 +3836,87 @@ form textarea:required:valid {
   color: var(--t-bright);
 }
 
+.resume-lines__badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin-left: 1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--t-bright);
+  border-radius: 50%;
+  color: var(--t-bright);
+  cursor: help;
+}
+.resume-lines__badge i {
+  font-size: 1.3rem;
+  line-height: 1;
+  color: currentColor;
+}
+.resume-lines__badge::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 0.8rem);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  background: var(--t-bright);
+  color: var(--base);
+  font: normal 600 1.2rem/1.2 var(--_font-default);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+.resume-lines__badge:hover::after,
+.resume-lines__badge:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 .resume-lines__descr {
   color: var(--t-medium);
   margin-top: 2rem;
+}
+
+.resume-lines__descr.is-clamped {
+  max-height: 9.6rem;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.resume-lines__descr.is-clamped.is-expanded {
+  max-height: 120rem;
+}
+
+.resume-lines__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font: normal 700 1.3rem/1 var(--_font-default);
+  letter-spacing: 0.02em;
+  color: var(--t-bright);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.resume-lines__more:hover {
+  opacity: 0.6;
+}
+.resume-lines__more i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+.resume-lines__more[aria-expanded="true"] i {
+  transform: rotate(180deg);
 }
 @media only screen and (min-width: 768px) {
   .resume-lines__descr {
@@ -3910,6 +3988,16 @@ form textarea:required:valid {
 .tools-cards__caption {
   line-height: 1;
   margin-top: 1.5rem;
+}
+
+.tools-cards__group-title {
+  width: 100%;
+  margin: 0 0 2rem;
+  padding-left: 3rem;
+}
+
+.tools-cards__group-title:not(:first-child) {
+  margin-top: 3rem;
 }
 
 .tools-card {

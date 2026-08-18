@@ -1,0 +1,43 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Tooling / local caches
+.tokensave/
+.claude/
+node_modules/
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env / secrets
+.env
+.env.*
+*.pem
+
+# Template demo scaffolding (uncomment when stripping for production)
+# css/main-demo.css
+# css/plugins-demo.css
+# js/demo/
+.tokensave
